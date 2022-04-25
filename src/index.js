@@ -2,6 +2,7 @@ import { render } from 'solid-js/web';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import '../dist/output.css';
 
 render(App, document.getElementById('root'));
 

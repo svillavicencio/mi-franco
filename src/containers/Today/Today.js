@@ -1,8 +1,8 @@
-import UserCard from '../../components/UserCard/UserCard';
-import moment from 'moment';
+import { lazy } from 'solid-js';
+
+const UserCard = lazy(() => import('../../components/UserCard/UserCard'));
 
 export default function Today() {
-  const date = moment(Date.now()).format('DD/MM/YYYY');
   return (
     <div class="">
       <div class="flex justify-center items-center mt-5">

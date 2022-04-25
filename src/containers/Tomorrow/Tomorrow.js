@@ -1,4 +1,6 @@
-import UserCard from '../../components/UserCard/UserCard';
+import { lazy } from 'solid-js';
+
+const UserCard = lazy(() => import('../../components/UserCard/UserCard'));
 
 export default function Tomorrow() {
   return (

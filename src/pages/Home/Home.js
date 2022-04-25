@@ -1,8 +1,10 @@
-import Today from '../../containers/Today/Today';
-import Tomorrow from '../../containers/Tomorrow/Tomorrow';
 import moment from 'moment';
+import { lazy } from 'solid-js';
 
-export default function Body() {
+const Today = lazy(() => import('../../containers/Today/Today'));
+const Tomorrow = lazy(() => import('../../containers/Tomorrow/Tomorrow'));
+
+export default function Home() {
   return (
     <div class="h-screen flex flex-col bg-white text-black mx-3 mt-4">
       <div class="flex items-center justify-between mx-4">

@@ -1,10 +1,19 @@
 import { render } from 'solid-js/web';
+import { Router } from 'solid-app-router';
+
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import '../dist/output.css';
 
-render(App, document.getElementById('root'));
+render(
+  () => (
+    <Router>
+      <App />
+    </Router>
+  ),
+  document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

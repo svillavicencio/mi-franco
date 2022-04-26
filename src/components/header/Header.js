@@ -11,6 +11,7 @@ export default function Header() {
         <Link href="/">
           <p class="cursor-pointer hover:text-gray-200">miFranco ☕️</p>
         </Link>
+        <p class="block text-sm font-medium">por Sergio Villavicencio</p>
       </div>
       <Link href="/test" class="w-full flex-1 flex flex-col sm:items-end">
         <input

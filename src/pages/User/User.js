@@ -20,7 +20,6 @@ export default function User() {
       `https://mifranco.herokuapp.com/users/${params.id}`
     );
     const data = await res.json();
-    console.log(data);
     return setUserData(data);
   });
 

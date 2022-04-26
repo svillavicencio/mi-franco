@@ -8,7 +8,6 @@ export default function Today() {
   onMount(async () => {
     const res = await fetch('https://mifranco.herokuapp.com/users/today');
     const data = await res.json();
-    console.log(data);
     return setUsers(data);
   });
 

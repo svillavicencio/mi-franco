@@ -17,12 +17,12 @@ export default function Users() {
   });
 
   onMount(async () => {
-    const res = await fetch('http://localhost:8080/users');
+    const res = await fetch('https://mifranco.herokuapp.com/users');
     setList(await res.json());
   });
 
   return (
-    <div class="flex flex-col flex-wrap divide-y p-2 text-2xl">
+    <div class="flex flex-col divide-y p-2 text-md">
       <For each={filteredList()} fallback={<p>Loading...</p>}>
         {(user) => <UserSearch user={user} />}
       </For>

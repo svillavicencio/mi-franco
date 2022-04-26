@@ -10,7 +10,8 @@
   "scripts": {
     "start": "solid-scripts start",
     "build": "solid-scripts build",
-    "test": "solid-scripts test"
+    "test": "solid-scripts test",
+    "tailwind": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch"
   },
   "browserslist": [
     "Chrome 74",

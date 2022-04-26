@@ -1,13 +1,26 @@
-import { lazy } from 'solid-js';
+import { createSignal, lazy, onMount } from 'solid-js';
 
 const UserCard = lazy(() => import('../../components/UserCard/UserCard'));
 
 export default function Today() {
+  const [users, setUsers] = createSignal([]);
+
+  onMount(async () => {
+    const res = await fetch('https://mifranco.herokuapp.com/users/today');
+    const data = await res.json();
+    console.log(data);
+    return setUsers(data);
+  });
+
   return (
-    <div class="">
-      <div class="flex justify-center items-center mt-5">
-        <UserCard color="green" />
-        <p class="text-2xl  flex-1 text-center">Hoy</p>
+    <div>
+      <div class="flex flex-col justify-center items-center mt-5 ">
+        <p class="text-2xl pt-8 text-center font-semibold mb-8">Hoy</p>
+        <div class="flex flex-col flex-1 w-3/4 ">
+          <For each={users()} fallback={<p>Loading...</p>}>
+            {(user) => <UserCard date="today" user={user} />}
+          </For>
+        </div>
       </div>
     </div>
   );
